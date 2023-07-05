@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="tela" width="600" height="400"></canvas>
+
+    <script>
+        var desenhaQuadrado = function(x,y) {
+            var tela = document.querySelector("canvas#tela")
+            var c = tela.getContext("2d")
+
+            c.fillStyle="green"
+            c.fillRect(x, y, 50, 50)
+
+            c.strokeStyle="black"
+            c.strokeRect(x, y, 50, 50)
+        }
+
+        var desenhaBolaAzul = function(x, y) {
+            var tela = document.querySelector("canvas#tela")
+            var c = tela.getContext("2d")
+            c.fillStyle="blue"
+            c.beginPath()
+            c.arc(x, y, 25, 0, 2*3.14)
+            c.fill()
+        }
+
+        for(var x = 0; x < 600; x = x + 50) {
+            desenhaQuadrado(x, 0)
+            
+        }
+
+        for(var x = 25; x < 600; x = x + 50) {
+            desenhaBolaAzul(x, 100)
+        }
+    </script>
+    
+</body>
+</html>

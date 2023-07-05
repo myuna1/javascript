@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status de Voto</title>
+</head>
+
+
+<body>
+    <style>body{
+    font: normal 12pt arial;
+    color: rgb(255, 255, 255);
+    background-color: rgb(243, 103, 103);
+
+}
+</style>
+    <h1>Qual sua idade?</h1>
+    <input type="text" name="idade" id="idade">
+    <input type="button" value="Verificar" onclick="voto()">
+    <div id="res">
+        
+    </div>
+    <script>
+        function voto(){
+           var vt = document.querySelector('input#idade')
+           var res = document.querySelector('div#res')
+           var aby = Number(vt.value)
+           res.innerHTML = `<p>Você tem <b>${aby}</b> anos</p>`
+
+            if(aby < 16){
+            res.innerHTML += 'E não vota!'
+            } else if(aby < 18 || aby > 65){
+                res.innerHTML += 'E seu voto eleitoral é opcional!'
+            } else{
+                res.innerHTML += 'E seu voto eleitoral é obrigatório!'
+            }
+         }
+    </script>
+    
+</body>
+</html>

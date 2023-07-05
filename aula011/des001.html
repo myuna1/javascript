@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <style>body{
+        font: normal 13pt arial;
+    }
+    </style>
+    <h1>Qual é sua nacionalidade?</h1>
+    País: <input type="text" name="pais" id="pais">
+    <input type="button" value="Verificar" onclick="analy()">
+    <div id="res">
+
+<script>
+    function analy(){
+        var p = document.querySelector('input#pais').value.toLowerCase()
+        var res = document.querySelector('div#res')
+        if(p == "brasil"){
+            res.innerHTML = '<p>Você é <b>Brasileiro!</b>'}
+        else{
+            res.innerHTML = '<p>Você é <b>Estrangeiro!</b><p>'}
+        }
+
+</script>
+    
+    
+</body>
+</html>
